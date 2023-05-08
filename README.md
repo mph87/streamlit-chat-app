@@ -3,9 +3,6 @@ This code is an adaptation of:
 https://github.com/marshmellow77/streamlit-chatgpt-ui
 
 
-# Install packages
-
-
 # Run App
 
 ## Step 1: Download the code Locally and Install Packages
