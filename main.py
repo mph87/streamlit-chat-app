@@ -99,11 +99,30 @@ with container:
         st.session_state['cost'].append(cost)
         st.session_state['total_cost'] += cost
 
+# Specify the avatar style and avatar_seed for the user and AI
+# See options here: https://www.dicebear.com/styles
+user_avatar, user_avatar_seed = 'pixel-art', "hh"
+ai_avatar, ai_avatar_seed = 'initials', "AI"
+
+# Alternatively, you can specify a custom avatar image with a URL
+user_logo_url = None
+ai_logo_url = None
+
+# Example logo urls (uncomment to use)
+#user_logo_url = "https://avatars.dicebear.com/api/initials/John%20Doe.svg"
+#ai_logo_url = "https://avatars.dicebear.com/api/initials/AI.svg" 
+
 if st.session_state['generated']:
     with response_container:
         for i in range(len(st.session_state['generated'])):
-            message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
-            message(st.session_state["generated"][i], key=str(i))
+            message(st.session_state["past"][i], is_user=True, key=str(i) + '_user', 
+                    avatar_style=user_avatar, seed=user_avatar_seed) # logo_=user_logo_url)
+            message(st.session_state["generated"][i], key=str(i), 
+                    avatar_style=ai_avatar, seed=ai_avatar_seed) #, logo=ai_logo_url)
+
+            
+
+
             #st.write(
             #    f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
             #counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
