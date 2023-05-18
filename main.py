@@ -2,6 +2,11 @@ import openai
 import streamlit as st
 from streamlit_chat import message
 
+from streamlit.script_run_context import add_script_run_ctx
+
+# Get session id
+session_id = add_script_run_ctx().streamlit_script_run_ctx.session_id
+
 # Setting page title and header
 st.set_page_config(page_title="Chat", page_icon=":robot_face:")
 st.markdown("<h1 style='text-align: center;'>ChatBot</h1>", unsafe_allow_html=True)
