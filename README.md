@@ -7,6 +7,14 @@ https://github.com/marshmellow77/streamlit-chatgpt-ui
 
 # Run App
 
+## Step 0: Download this repo
+
+```
+git clone https://github.com/mph87/streamlit-chat-app.git
+```
+
+Also, install Miniconda if you haven't done so already. Google "Install Conda".
+
 ## Step 1: Download the code Locally and Install Packages
 Download the code to your computer. Then, create a virutal environment and install the required packages as follows:
 ```
@@ -45,4 +53,10 @@ streamlit run main.py
 1. Register an account at https://streamlit.io/cloud
 2. Upload your code.
 3. Add your secret API code (will add details on this shortly.)
+
+
+# Find the OpenAI API key
+
+1. Go to https://platform.openai.com/account/api-keys
+2. Create new key and save it to .streamlit/secrets.toml (assuming you are in this folder)
 
